@@ -1,0 +1,13 @@
+node_modules
+/src/.main.tsx
+tsconfig.json
+dist
+package-lock.json
+.cache
+.DS_Store
+.idea
+yarn-error.log
+/src/application/*
+/src/application/f2e-leaflet
+/src/services/wasm_secret/lib
+/src/services/wasm_secret/loader.ts
