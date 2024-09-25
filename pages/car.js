@@ -86,10 +86,12 @@ export default function Page() {
             <Form.Item  className={styles.colorFff} rules={[{ required: true, message: "请先勾选" }]} name="checkbox" label="是否同意授权" valuePropName="checked">
               <Checkbox shape="square" />
             </Form.Item>
+            <div className={styles.check}>
             查看
             <Link href="/private" className={styles.colorLink}>
             《个人信息授权与隐私政策》
             </Link>
+            </div>
           </Form>
         </div>
         {[focus01, focus02, focus03, focus1, focus2, focus3].map(
