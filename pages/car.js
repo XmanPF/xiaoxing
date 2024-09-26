@@ -69,6 +69,16 @@ export default function Page() {
               <Picker
                 popup
                 columns={[
+                  "上海",
+                  "北京",
+                  "深圳",
+                  "重庆",
+                  "广州",
+                  "成都",
+                  "天津",
+                  "东莞",
+                  "武汉",
+                  "杭州",
                   "南京",
                   "苏州",
                   "常州",
@@ -78,28 +88,91 @@ export default function Page() {
                   "宿迁",
                   "泰州",
                   "无锡",
+                  "赣州市",
+                  "高雄市",
+                  "高雄县",
+                  "固原市",
+                  "广安市",
+                  "广元市",
+                  "广州市",
+                  "贵港市",
+                  "贵阳市",
+                  "桂林市",
+                  "果洛藏族自治州",
+                  "哈尔滨市",
+                  "哈密地区",
+                  "海外",
+                  "海北藏族自治州",
+                  "海东地区",
+                  "海口市",
+                  "海南藏族自治州",
+                  "海西蒙古族藏族自治州",
+                  "邯郸市",
+                  "汉中市",
+                  "杭州市",
+                  "合肥市",
+                  "和田地区",
+                  "河池市",
+                  "河源市",
+                  "菏泽市",
+                  "贺州市",
+                  "鹤壁市",
+                  "鹤岗市",
+                  "黑河市",
+                  "衡水市",
+                  "衡阳市",
+                  "红河哈尼族彝族自治州",
+                  "呼和浩特市",
+                  "呼伦贝尔市",
+                  "湖州市",
+                  "葫芦岛市",
+                  "花莲县",
+                  "怀化市",
+                  "淮安市",
+                  "淮北市",
+                  "淮南市",
+                  "黄冈市",
+                  "黄南藏族自治州",
+                  "黄山市",
+                  "黄石市",
+                  "惠州市",
+                  "鸡西市",
+                  "基隆市",
+                  "吉安市",
+                  "吉林市",
+                  "济南市",
+                  "济宁市",
+                  "济源市",
+                  "佳木斯市",
+                  "嘉兴市",
+                  "嘉义市",
+                  "嘉义县",
                 ]}
               >
                 {(val) => val || "请选择城市"}
               </Picker>
             </Form.Item>
-            <Form.Item  className={styles.colorFff} rules={[{ required: true, message: "请先勾选" }]} name="checkbox" label="是否同意授权" valuePropName="checked">
+            <Form.Item
+              className={styles.colorFff}
+              rules={[{ required: true, message: "请先勾选" }]}
+              name="checkbox"
+              label="是否同意授权"
+              valuePropName="checked"
+            >
               <Checkbox shape="square" />
             </Form.Item>
             <div className={styles.check}>
-            查看
-            <Link href="/private" className={styles.colorLink}>
-            《个人信息授权与隐私政策》
-            </Link>
+              查看
+              <Link href="/private" className={styles.colorLink}>
+                《个人信息授权与隐私政策》
+              </Link>
             </div>
           </Form>
         </div>
-        {[focus01, focus02, focus03, focus1, focus2, focus3].map(
-          (item, index) => {
-            return <Image key={index} src={item} />;
-          }
-        )}
-        <Image src={tip} alt="Next.js logo" />
+        <Image src={tip} />
+        {[focus01, focus02, focus03, focus1].map((item, index) => {
+          return <Image key={index} src={item} />;
+        })}
       </div>
     </>
   );
