@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import car1 from "../images/car/car1.jpg";
-import focus1 from "../images/car/focus1.jpg";
-import focus01 from "../images/car/focus01.jpg";
-import focus02 from "../images/car/focus02.jpg";
-import focus03 from "../images/car/focus03.jpg";
-import tip from "../images/car/tip.jpg";
+import car1 from "../images/car3/car1.jpg";
+import focus01 from "../images/car3/focus01.jpg";
+import focus02 from "../images/car3/focus02.jpg";
+import focus03 from "../images/car3/focus03.jpg";
+import tip from "../images/car3/tip.jpg";
 import { Button, Input, Form, Toast, Picker, Checkbox } from "react-vant";
 import styles from "./car.module.css";
 import "../app/globals.css";
@@ -167,8 +166,8 @@ export default function Page() {
             </div>
           </Form>
         </div>
-        <Image src={tip} />
-        {[focus01, focus02, focus03, focus1].map((item, index) => {
+        {/* <Image src={tip} /> */}
+        {[focus01, focus02, focus03].map((item, index) => {
           return <Image key={index} src={item} />;
         })}
       </div>
