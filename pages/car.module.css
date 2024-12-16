@@ -1,6 +1,5 @@
 .formWrap{
     padding:20px 50px;
-    background: #5a89bc;
 }
 .rvCell{
     background: transparent;
@@ -8,10 +7,10 @@
     
 }
 .colorFff{
-    color:#fff;
+    /* color:#fff;
     --rv-field-label-color:#fff;
     --rv-cell-value-color:#fff;
-    --rv-input-text-color:#fff;
+    --rv-input-text-color:#fff; */
     background:transparent;
 }
 
