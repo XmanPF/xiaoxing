@@ -9,6 +9,8 @@ function App() {
     console.log(phone)
     if (!phone) {
      Toast.info( '请输入手机号')
+    }else{
+      Toast.info( '经后台统计，您当前账户未有配额')
     }
   }
 
