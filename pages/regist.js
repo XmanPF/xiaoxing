@@ -1,17 +1,40 @@
 import React from 'react';
 import { useState } from 'react';
 import './regist.css';
-import { Button, Input, Form, Toast, Picker, Checkbox } from "react-vant";
+import { Toast,Dialog } from "react-vant";
 
 function App() {
   const [phone, setPhone] = useState('')
+  const [selected, setSelected] = useState(false)
   const handleGet = () => {
     console.log(phone)
     if (!phone) {
-     Toast.info( '请输入手机号')
-    }else{
-      Toast.info( '经后台统计，您当前账户未有配额')
+      Toast.info('请输入手机号')
+      return
     }
+    if (!selected) {
+      Toast.info('请勾选同意《注册服务协议》及《隐私政策》')
+      return
+    }
+    Toast.info('经后台统计，您当前账户未有配额')
+  }
+
+  const showXieyi = () => {
+    Dialog.alert({
+      title: '注册服务协议',
+      message: '1111',
+    }).then(() => {
+      // on close
+    });
+  }
+
+  const showZhenggce = () => {
+    Dialog.alert({
+      title: '隐私政策',
+      message: '2222',
+    }).then(() => {
+      // on close
+    });
   }
 
   return (
@@ -44,8 +67,8 @@ function App() {
           查看我的额度
         </button>
         <div className="agreement-row">
-          <input type="checkbox" id="agree" />
-          <label htmlFor="agree">阅读并同意《注册服务协议》及《隐私政策》</label>
+          <input type="checkbox" id="agree" value={selected} onChange={(e) => setSelected(e.target.checked)} />
+          <label htmlFor="agree">阅读并同意<a onClick={showXieyi}>《注册服务协议》</a>及<a onClick={showZhenggce}>《隐私政策》</a></label>
         </div>
         <div className="coupon-info">
           <img width={30} src="/statics/52fc4a5d14a245659743fb67f3dd089d.png" alt="优惠券" />
@@ -70,15 +93,15 @@ function App() {
           <li>活动时间：即日起-2025年12月31日</li>
           <li>活动对象：首次完成注册的用户</li>
           <li>活动奖励：30天息费优惠券<br />本券仅适用于分期还款，且选择借款时长&gt;=12个月的可选用，使用该券后可减免最后一期的息费，最高可减免65元；若发生提前还款，逾期等情况，本券将自动作废。</li>
-          <li>查看息费优惠券：借条APP—我的—优惠券</li>
-          <li>活动介绍：<br />从未在借条注册过的用户，活动期间通过此页面完成注册，下载APP，并完成额度申请，授信通过后可获得一张最长30天息费优惠券，有效期为自兑换成功起7天内有效。借款时可选择使用，仅适用十二期及以上分期借款产品，仅用户正常还款时可用。优惠减免金额上限为65元。优惠券的具体使用以APP内使用规则为准。</li>
-          <li>若发现有恶意参与或作弊行为，借条有权不予赠送息费优惠券，在法律法规允许范围内，活动最终解释权归借条所有。</li>
-          <li>如有任何疑问，可关注“借条”微信公众号进行咨询。活动详情可咨询客服400-603-0</li>
+          <li>查看息费优惠券：APP—我的—优惠券</li>
+          <li>活动介绍：<br />从未注册过的用户，活动期间通过此页面完成注册，下载APP，并完成额度申请，授信通过后可获得一张最长30天息费优惠券，有效期为自兑换成功起7天内有效。借款时可选择使用，仅适用十二期及以上分期借款产品，仅用户正常还款时可用。优惠减免金额上限为65元。优惠券的具体使用以APP内使用规则为准。</li>
+          <li>若发现有恶意参与或作弊行为，有权不予赠送息费优惠券，在法律法规允许范围内，活动最终解释权归所有。</li>
+          <li>如有任何疑问，可关注微信公众号进行咨询。活动详情可咨询客服</li>
         </ol>
       </section>
       <footer className="footer">
         <div>
-          借条 版权所有
+         版权所有
         </div>
         <div>贷款有风险，借款需谨慎</div>
       </footer>
